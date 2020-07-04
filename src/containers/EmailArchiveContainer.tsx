@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent, useState } from 'react'
 import moment from 'moment'
 import { RangeValue } from 'rc-picker/lib/interface'
 
@@ -14,11 +14,7 @@ const EmailArchiveComponent: FunctionComponent = () => {
   const [dateRangeTo, setDateRangeTo] = useState<Date>()
   const [emailsToDisplay, setEmailsToDisplay] = useState<readonly IEmail[]>([])
   const [emailBodiesToShow, setEmailBodiesToShow] = useState<number[]>([])
-  const [activeItem, setActiveItem] = useState<string>('')
-
-  useEffect(() => {
-    updateActiveItems('date')
-  }, [])
+  const [activeItem, setActiveItem] = useState<string>('date')
 
   const updateActiveItems = (item: string) => setActiveItem(item)
 
