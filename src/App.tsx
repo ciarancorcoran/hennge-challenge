@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+
+import { color2 } from './constants/CommonStyles'
+
+import './App.css'
+import 'antd/dist/antd.css'
+import EmailArchiveComponent from './containers/EmailArchiveContainer'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding-top: 20px;
+    color: #333333;
+    font-family: Open-Sans, Helvetica, Sans-Serif;
+
+    @media screen and (min-width: 1024px) {
+      padding: 30px;
+    }
+  }
+
+  h2 { color: ${color2} }
+
+  /* ANTD OVERRIDES */
+  .customize-panels .ant-picker-range-wrapper .ant-picker-panel-container .ant-picker-panels {
+    display: block;
+  }
+
+  .customize-panels.ant-picker-dropdown-hidden {
+    display: none !important;
+  }
+
+  .hide { display: none !important; }
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      <EmailArchiveComponent />
+    </>
+  )
 }
 
 export default App;
