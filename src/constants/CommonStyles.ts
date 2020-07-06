@@ -29,5 +29,5 @@ export const overflowEllipsis = css`
 
 export const flexWrap = css`
   display: flex;
-  flex: wrap;
+  flex-wrap: wrap;
 `
