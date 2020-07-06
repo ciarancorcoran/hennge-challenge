@@ -6,4 +6,4 @@ I used React hooks for a functional programming pattern. I also followed the con
 
 I picked Ant Design as a component library and used their Date range picker to create the calendar and date picker.
 
-Also used styled components to achieve the look and feel of the UI and created a CommonStyles file to reuse some styles. The UI is adaptive to the users viewport and I used a combination of Flexbox and CSS grid to get the correct design.
+Also used styled components to achieve the look and feel of the UI and created a CommonStyles file to reuse some styles. The UI is adaptive to the users viewport width and I used a combination of Flexbox and CSS grid to get the correct design.
