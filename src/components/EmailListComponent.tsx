@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import moment from 'moment'
 import ToEmailListComponent from './ToEmailListComponent'
+import EmailBodyComponent from './EmailBodyComponent'
 
 import { IEmail } from '../constants/IEmail'
 import { positionAbsoluteMixin, border1, gridLayout,
@@ -159,12 +159,14 @@ const EmailListComponent: FunctionComponent<IProps> = ({
             </span>
           </div>
           <div className={emailBodiesToShow.includes(r.id) ? 'email__details' : 'hide'}>
-            <span><strong>From: </strong>{r.from}</span>
-            <span><strong>To: </strong>{r.to.map(r => r)}</span>
-            <span><strong>Date: </strong>{moment(r.date).format('YYYY/MM/DD h:mm:ss a')}</span>
-            <span><strong>Subject: </strong>{r.subject}</span>
-            {r.attachment !== '' ? <span><strong>Attachment: </strong>{r.attachment}</span> : ''}
-            <p>{r.email_body}</p>
+            <EmailBodyComponent
+              from={r.from}
+              to={r.to}
+              date={r.date}
+              subject={r.subject}
+              attachment={r.attachment}
+              emailBody={r.email_body}
+            />
           </div>
         </li>
       )})
