@@ -132,14 +132,6 @@ interface IProps {
   formatDate: (date: Date) => void
 }
 
-interface IProps {
-  emails: readonly IEmail[]
-  showEmailBody: (idToAddOrRemove: number) => void
-  emailBodiesToShow: number[]
-  activeItem: string
-  formatDate: (date: Date) => void
-}
-
 const EmailListComponent: FunctionComponent<IProps> = ({
   emails,
   showEmailBody,
