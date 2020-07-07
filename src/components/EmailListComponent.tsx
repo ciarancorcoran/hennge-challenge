@@ -163,6 +163,7 @@ const EmailListComponent: FunctionComponent<IProps> = ({
             <span><strong>To: </strong>{r.to.map(r => r)}</span>
             <span><strong>Date: </strong>{moment(r.date).format('YYYY/MM/DD h:mm:ss a')}</span>
             <span><strong>Subject: </strong>{r.subject}</span>
+            {r.attachment !== '' ? <span><strong>Attachment: </strong>{r.attachment}</span> : ''}
             <p>{r.email_body}</p>
           </div>
         </li>
