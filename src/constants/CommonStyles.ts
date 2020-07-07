@@ -18,7 +18,7 @@ export const positionAbsoluteMixin = ( top?: string, left?: string, right?: stri
 `
 export const gridLayout = css`
   display: grid;
-  grid-template-columns: 2fr 3fr 6fr 1fr;
+  grid-template-columns: 20% 30% 43% 7%;
 `
 
 export const overflowEllipsis = css`
