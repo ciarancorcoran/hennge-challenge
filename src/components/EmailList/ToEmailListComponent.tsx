@@ -12,8 +12,8 @@ const ToEmailListComponent: FunctionComponent<IProps> = ({ emailAddresses, activ
   const [emailsTruncated, setEmailsTruncated] = useState<number>()
 
   useEffect(() => {
-    const defRefItems = {...itemsRef}
-    defRefItems.current = itemsRef.current.slice(0, emailAddresses.length)
+    const deRefItems = {...itemsRef}
+    deRefItems.current = itemsRef.current.slice(0, emailAddresses.length)
     getTruncated()
   }, [emailAddresses])
 
