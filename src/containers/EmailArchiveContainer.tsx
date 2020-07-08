@@ -2,9 +2,9 @@ import React, { FunctionComponent, useState } from 'react'
 import moment from 'moment'
 import { RangeValue } from 'rc-picker/lib/interface'
 
-import DateRangePickerComponent from '../components/DateRangePickerComponent'
-import EmailListHeaderComponent from '../components/EmailListHeaderComponent'
-import EmailListComponent from '../components/EmailListComponent'
+import DateRangePickerComponent from '../components/DateRangePicker/DateRangePickerComponent'
+import EmailListHeaderComponent from '../components/EmailList/EmailListHeaderComponent'
+import EmailListComponent from '../components/EmailList/EmailListComponent'
 
 import { IEmail } from '../constants/IEmail'
 import { emails } from '../data/emails'

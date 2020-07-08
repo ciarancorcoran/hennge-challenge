@@ -1,61 +1,9 @@
 import React, { FunctionComponent, useState } from 'react'
-import styled from 'styled-components'
 
-import { border1, gridLayout, bgColor1, color2, boldTextColor } from '../constants/CommonStyles'
+import { EmailListHeading, ListHeader } from './EmailListComponentStyles'
 
-import iconArrowAsc from '../assets/icon_arrow01.svg'
+import iconArrowAsc from '../../assets/icon_arrow01.svg'
 
-const EmailListHeading = styled.div`
-  @media screen and (max-width: 1023px) {
-    h2 { margin-left: 20px }
-  }
-`
-
-const ListHeader = styled.header`
-  background: ${bgColor1};
-  padding: 20px;
-  font-weight: bold;
-  border: ${border1};
-  border-width: 1px 0 1px 0;
-
-  div {
-    display: inline-block;
-    color: ${color2};
-    border-right: ${border1};
-    padding: 0 10px;
-    cursor: pointer;
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      border-right: 0;
-    }
-
-    &.active {
-      color: ${boldTextColor};
-    }
-
-    img {
-      width: 10px;
-      margin-left: 5px;
-
-      &.ascending {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    ${gridLayout}
-
-    div {
-      border-right: none;
-      padding-left: 0;
-    }
-  }
-`
 
 interface IProps {
   resultsLength: number

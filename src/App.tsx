@@ -1,7 +1,7 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 
-import { color2 } from './constants/CommonStyles'
+import { color2 } from './utils/CommonStyles'
 
 import './App.css'
 import 'antd/dist/antd.css'

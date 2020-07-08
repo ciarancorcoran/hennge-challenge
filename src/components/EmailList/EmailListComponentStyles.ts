@@ -1,21 +1,13 @@
-import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import ToEmailListComponent from './ToEmailListComponent'
-import EmailBodyComponent from './EmailBodyComponent'
 
-import { IEmail } from '../constants/IEmail'
 import { positionAbsoluteMixin, border1, gridLayout,
-  overflowEllipsis, color2, boldTextColor, flexWrap } from '../constants/CommonStyles'
+  overflowEllipsis, bgColor1, color2, boldTextColor, flexWrap } from '../../utils/CommonStyles'
 
-import iconArrow2 from '../assets/icon_arrow02.svg'
-import iconMail from '../assets/icon_mail_sp.svg'
-import attachmentImg from '../assets/icon_clip.svg'
-import logo from '../assets/logo.png'
-
-const EmailList = styled.ul`
+export const EmailList = styled.ul`
   list-style: none;
   padding-left: 0;
   margin: 0;
+
   li {
     border-bottom: ${border1};
     padding: 20px;
@@ -91,6 +83,7 @@ const EmailList = styled.ul`
       }
       span { margin-right: 5px; }
     }
+
     @media screen and (min-width: 1024px) {
       .email__mail-img, .email__date__arrow { display: none; }
       .email__item {
@@ -115,7 +108,8 @@ const EmailList = styled.ul`
     }
   }
 `
-const NoEmails = styled.section`
+
+export const NoEmails = styled.section`
   padding-top: 160px;
   width: 100%;
   display: flex;
@@ -124,54 +118,54 @@ const NoEmails = styled.section`
   border-top: ${border1};
 `
 
-interface IProps {
-  emails: readonly IEmail[]
-  showEmailBody: (idToAddOrRemove: number) => void
-  emailBodiesToShow: number[]
-  activeItem: string
-  formatDate: (date: Date) => void
-}
+export const ListHeader = styled.header`
+  background: ${bgColor1};
+  padding: 20px;
+  font-weight: bold;
+  border: ${border1};
+  border-width: 1px 0 1px 0;
 
-const EmailListComponent: FunctionComponent<IProps> = ({
-  emails,
-  showEmailBody,
-  emailBodiesToShow,
-  activeItem,
-  formatDate
-}) => { return emails.length > 0 ? (
-  <EmailList>
-    {emails.map(r => {
-      const dateToShow = formatDate(r.date)
-      return (
-        <li key={r.id} onClick={() => showEmailBody(r.id)}>
-          <img className='email__mail-img' src={iconMail} alt='mail from to' />
-          <div className='email__item'>
-            <span className={activeItem === 'from' ? 'active' : ''}>{r.from}</span>
-            <span className='email__to'>
-              <ToEmailListComponent activeItem={activeItem} emailAddresses={r.to} />
-            </span>
-            <span className={activeItem === 'subject' ? 'email__subject active' : 'email__subject'}>{r.subject}</span>
-            <span className='email__date'>
-              <span  className={activeItem === 'date' ? 'active' : ''}>
-                {r.attachment !== '' ? <img className='email__attachment' src={attachmentImg} alt='attachment' /> : ''} {dateToShow}
-              </span>
-              <img className='email__date__arrow' src={iconArrow2} alt='arrow' />
-            </span>
-          </div>
-          <div className={emailBodiesToShow.includes(r.id) ? 'email__details' : 'hide'}>
-            <EmailBodyComponent
-              from={r.from}
-              to={r.to}
-              date={r.date}
-              subject={r.subject}
-              attachment={r.attachment}
-              emailBody={r.email_body}
-            />
-          </div>
-        </li>
-      )})
+  div {
+    display: inline-block;
+    color: ${color2};
+    border-right: ${border1};
+    padding: 0 10px;
+    cursor: pointer;
+
+    &:first-child {
+      padding-left: 0;
     }
-  </EmailList> ) : <NoEmails><img src={logo} alt='logo' /></NoEmails>
-}
 
-export default EmailListComponent
+    &:last-child {
+      border-right: 0;
+    }
+
+    &.active {
+      color: ${boldTextColor};
+    }
+
+    img {
+      width: 10px;
+      margin-left: 5px;
+
+      &.ascending {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    ${gridLayout}
+
+    div {
+      border-right: none;
+      padding-left: 0;
+    }
+  }
+`
+
+export const EmailListHeading = styled.div`
+  @media screen and (max-width: 1023px) {
+    h2 { margin-left: 20px }
+  }
+`

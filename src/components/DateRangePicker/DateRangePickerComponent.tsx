@@ -4,10 +4,10 @@ import { DatePicker } from 'antd'
 import { RangeValue } from 'rc-picker/lib/interface'
 import moment from 'moment'
 
-import { bgColor1, color1 } from '../constants/CommonStyles'
+import { bgColor1, color1 } from '../../utils/CommonStyles'
 
-import iconSearch from '../assets/icon_search.svg'
-import iconCalender from '../assets/icon_calender.svg'
+import iconSearch from '../../assets/icon_search.svg'
+import iconCalender from '../../assets/icon_calender.svg'
 
 const { RangePicker } = DatePicker
 

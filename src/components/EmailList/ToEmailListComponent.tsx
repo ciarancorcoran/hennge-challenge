@@ -49,7 +49,7 @@ const ToEmailListComponent: FunctionComponent<IProps> = ({ emailAddresses, activ
 
   const getTruncated = () => {
     let truncatedCount = 0
-    itemsRef.current.forEach((r: any) => { // TODO: investigate why it's any!
+    itemsRef.current.forEach((r: any) => {
       if (r.offsetLeft > (r.parentNode.offsetWidth - r.offsetWidth)) {
         setEmailsTruncated(truncatedCount++)
       }
