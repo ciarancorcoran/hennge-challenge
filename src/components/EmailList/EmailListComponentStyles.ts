@@ -169,3 +169,27 @@ export const EmailListHeading = styled.div`
     h2 { margin-left: 20px }
   }
 `
+
+export const Badge = styled.sup`
+  background: #888888;
+  padding: 1px 4px;
+  color: #ffffff;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .8rem;
+  position: absolute;
+  height: 17px;
+  width: 25px;
+  top: 50%;
+  right: 0;
+  margin-top: -11px;
+  line-height: 1.2;
+
+  &::before {
+    content: '+';
+  }
+
+  @media screen and (min-width: 1024px) {
+    right: 30px;
+  }
+`
