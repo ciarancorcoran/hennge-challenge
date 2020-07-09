@@ -2,12 +2,12 @@ import React, { FunctionComponent, useRef, useEffect, useState, useLayoutEffect 
 
 import { Badge } from './EmailListComponentStyles'
 
-interface IProps {
+type Props = {
   emailAddresses: readonly string[]
   activeItem: string
 }
 
-const ToEmailListComponent: FunctionComponent<IProps> = ({ emailAddresses, activeItem }) => {
+const ToEmailListComponent: FunctionComponent<Props> = ({ emailAddresses, activeItem }) => {
   const itemsRef = useRef<HTMLSpanElement[] | null[]>([null])
   const [emailsTruncated, setEmailsTruncated] = useState<number>()
 

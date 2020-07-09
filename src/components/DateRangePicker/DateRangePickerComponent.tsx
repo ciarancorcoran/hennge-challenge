@@ -53,12 +53,12 @@ const RangePickerStyles = {
   width: '280px'
 }
 
-interface IProps {
+type Props = {
   dateChangeHandler: (date: RangeValue<moment.Moment>, dateString: [string, string]) => void
   onSearch: () => void
 }
 
-const DateRangePickerComponent: FunctionComponent<IProps> = ({ dateChangeHandler, onSearch }) => (
+const DateRangePickerComponent: FunctionComponent<Props> = ({ dateChangeHandler, onSearch }) => (
   <DateSelection>
     <div className='date-selection-input'>
       <img src={iconCalender} alt='Calendar' />

@@ -5,14 +5,14 @@ import { EmailListHeading, ListHeader } from './EmailListComponentStyles'
 import iconArrowAsc from '../../assets/icon_arrow01.svg'
 
 
-interface IProps {
+type Props = {
   resultsLength: number
   orderByAlphabetical: (selectedCol: string, ascending: boolean) => void
   activeItem: string
   updateActiveItems: (item: string) => void
 }
 
-const EmailListHeaderComponent: FunctionComponent<IProps> = ({
+const EmailListHeaderComponent: FunctionComponent<Props> = ({
   resultsLength,
   orderByAlphabetical,
   activeItem,

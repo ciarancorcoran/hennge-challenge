@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import moment from 'moment'
 
-interface IProps {
+type Props =  {
   from: string
   to: string[]
   date: Date
@@ -10,7 +10,7 @@ interface IProps {
   emailBody: string
 }
 
-const EmailBodyComponent: FunctionComponent<IProps> = ({
+const EmailBodyComponent: FunctionComponent<Props> = ({
   from,
   to,
   date,

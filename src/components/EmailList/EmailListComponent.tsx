@@ -10,7 +10,7 @@ import iconMail from '../../assets/icon_mail_sp.svg'
 import attachmentImg from '../../assets/icon_clip.svg'
 import logo from '../../assets/logo.png'
 
-interface IProps {
+type Props = {
   emails: readonly IEmail[]
   showEmailBody: (idToAddOrRemove: number) => void
   emailBodiesToShow: number[]
@@ -18,7 +18,7 @@ interface IProps {
   formatDate: (date: Date) => void
 }
 
-const EmailListComponent: FunctionComponent<IProps> = ({
+const EmailListComponent: FunctionComponent<Props> = ({
   emails,
   showEmailBody,
   emailBodiesToShow,
